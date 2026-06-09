@@ -3,19 +3,19 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
 
         {/* Logo */}
         <div className="flex items-center gap-3">
           <Image
             src="/logo.png"
             alt="ZxOra Logo"
-            width={50}
-            height={50}
+            width={40}
+            height={40}
             priority
           />
 
-          <span className="text-xl font-semibold text-white tracking-wide">
+          <span className="text-lg md:text-xl font-semibold text-white tracking-wide">
             ZxOra
           </span>
         </div>
@@ -53,12 +53,14 @@ export default function Navbar() {
 
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button - Desktop Only */}
         <a
           href="https://wa.me/919720229969"
           target="_blank"
           rel="noopener noreferrer"
           className="
+            hidden
+            md:block
             bg-white
             text-black
             px-6
