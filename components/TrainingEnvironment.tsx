@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function TrainingEnvironment() {
   return (
@@ -6,42 +9,53 @@ export default function TrainingEnvironment() {
 
       {/* Background Glow */}
       <div className="absolute inset-0 flex justify-center items-center">
-        <div className="w-[700px] h-[700px] bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-[180px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* Heading */}
-        <div className="text-center mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
+        >
 
           <p className="uppercase tracking-[6px] text-cyan-400 mb-4">
             Training Environment
           </p>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
             Elite Training Environment
           </h2>
 
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-zinc-400 max-w-2xl mx-auto text-lg leading-8">
             Access professional-grade equipment and an environment
             designed to help you push your limits every day.
           </p>
 
-        </div>
+        </motion.div>
 
         {/* Image Container */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          whileHover={{ scale: 1.01 }}
           className="
             relative
             overflow-hidden
             rounded-3xl
             border
-            border-zinc-800
-            shadow-2xl
+            border-cyan-400/15
+            shadow-[0_0_40px_rgba(34,211,238,0.08)]
             transition-all
             duration-700
-            hover:border-cyan-400/50
-            hover:shadow-[0_0_50px_rgba(34,211,238,0.15)]
+            hover:border-cyan-400/30
+            hover:shadow-[0_0_60px_rgba(34,211,238,0.15)]
           "
         >
 
@@ -56,27 +70,27 @@ export default function TrainingEnvironment() {
               object-cover
               transition-all
               duration-700
-              hover:scale-110
+              hover:scale-105
             "
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
           {/* Bottom Text */}
           <div className="absolute bottom-8 left-8">
 
-            <h3 className="text-3xl font-bold text-white mb-2">
+            <h3 className="text-3xl font-bold text-white mb-2 tracking-tight">
               Train With Purpose
             </h3>
 
-            <p className="text-gray-300">
+            <p className="text-zinc-300">
               Premium equipment. Professional atmosphere.
             </p>
 
           </div>
 
-        </div>
+        </motion.div>
 
       </div>
 
