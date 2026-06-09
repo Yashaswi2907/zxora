@@ -53,7 +53,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="bg-black text-white py-24 px-6 overflow-hidden"
+      className="bg-black text-white py-32 px-6 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
 
@@ -62,13 +62,13 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <p className="text-gray-400 uppercase tracking-[4px] mb-4">
+          <p className="text-cyan-400 uppercase tracking-[4px] mb-4">
             Services
           </p>
 
-          <h2 className="text-5xl md:text-6xl font-bold">
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
             What We Offer
           </h2>
         </motion.div>
@@ -89,33 +89,56 @@ export default function Services() {
                   delay: index * 0.12,
                 }}
                 whileHover={{
-                  y: -10,
+                  y: -12,
                   scale: 1.03,
                 }}
                 className="
-                  bg-white/[0.03]
+                  relative
+                  overflow-hidden
+                  bg-white/[0.02]
+                  backdrop-blur-xl
                   border
-                  border-white/10
+                  border-white/5
                   rounded-3xl
                   p-8
-                  hover:border-cyan-400/40
-                  hover:bg-white/[0.05]
                   transition-all
-                  duration-300
+                  duration-500
+                  hover:border-cyan-400/30
+                  hover:shadow-[0_0_40px_rgba(34,211,238,0.12)]
                 "
               >
-                <Icon
-                  size={42}
-                  className="text-cyan-400 mb-6"
+
+                {/* Glow Effect */}
+                <div
+                  className="
+                    absolute
+                    -top-10
+                    -right-10
+                    w-32
+                    h-32
+                    bg-cyan-400/10
+                    rounded-full
+                    blur-3xl
+                  "
                 />
 
-                <h3 className="text-2xl font-semibold mb-4">
+                <Icon
+                  size={42}
+                  className="
+                    text-cyan-400
+                    mb-6
+                    drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]
+                  "
+                />
+
+                <h3 className="text-2xl font-bold mb-4 tracking-tight">
                   {service.title}
                 </h3>
 
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-zinc-400 leading-7">
                   {service.description}
                 </p>
+
               </motion.div>
             );
           })}
