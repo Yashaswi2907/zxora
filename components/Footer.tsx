@@ -69,7 +69,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="mailto:zxorafitness@gmail.com"
+            href="mailto:kane@zxora.fit"
             className="
               text-zinc-400
               hover:text-cyan-400
